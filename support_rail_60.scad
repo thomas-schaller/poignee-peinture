@@ -1,11 +1,12 @@
 use <threads.scad>
+use <rail.scad>
 $fn=180;
 longueur=100;
 largeur=40;
 epaisseur=4;
-largeur_rail=9.4;
+largeur_rail=10;
 longueur_rail=30;
-epaisseur_rail=5.6;
+epaisseur_rail=6;
 translate([0,-largeur/2+largeur_rail/2,-epaisseur])
 {
 difference(){
@@ -26,11 +27,5 @@ cylinder(epaisseur/2,d1=31,d2=32);
 
 
 translate([-12,0,0]){
-cube([longueur_rail,largeur_rail,epaisseur_rail]);
-    translate([0,-1.8,3.6]){
-        cube([longueur_rail,1.8,epaisseur_rail-3.6]);
-    }
-     translate([0,largeur_rail,3.6]){
-        cube([longueur_rail,1.8,epaisseur_rail-3.6]);
-    } 
+rail_male(longueur_rail,largeur_rail,epaisseur_rail);
 }
